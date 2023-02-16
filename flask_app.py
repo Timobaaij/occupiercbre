@@ -76,14 +76,6 @@ def upload_files():
 
             slide.shapes.placeholders[first_picture_index].insert_picture(io.BytesIO(img_bytes))
 
-        if not os.path.isfile(image1_path):
-            print(f'Error: Could not find {image1_path}')
-        else:
-            with open(image1_path, 'rb') as f:
-                img_bytes = f.read()
-
-            slide.shapes.placeholders[first_picture_index].insert_picture(io.BytesIO(img_bytes))
-
         if not os.path.isfile(image2_path):
             print(f'Error: Could not find {image2_path}')
         else:
