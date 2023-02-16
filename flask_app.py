@@ -65,16 +65,13 @@ def upload_files():
         slide.shapes.placeholders[29].text = str(row['Parking Cost'])
         slide.shapes.placeholders[31].text = str(row['Comments'])
         
-        #Picture Google maps link
-        picture_placeholder = slide.shapes.placeholders[33]
+        # Get the picture placeholder and insert the picture
+        picture_placeholder = slide.placeholders[33]
         picture_path = os.path.join(app.config['STATIC_FOLDER'], 'picture.png')
         picture = picture_placeholder.insert_picture(picture_path)
-        
-        # Add a transparent shape over the picture and set the hyperlink for it
-        hyperlink_shape = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, picture.left, picture.top, picture.width, picture.height)
-        hyperlink_shape.fill.background().transparency = 100000
-        hyperlink_shape.click_action.hyperlink.address = str(row['Google Maps'])
-        hyperlink_shape.z_order = picture.z_order + 1
+
+        # Add a hyperlink to the picture placeholder
+        hyperlink = picture_placeholder.part.add_hyperlink(str(row['Google Maps']), rId=1)
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
