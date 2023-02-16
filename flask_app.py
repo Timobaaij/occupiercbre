@@ -67,13 +67,16 @@ def upload_files():
         slide.shapes.placeholders[29].text = str(row['Parking Cost'])
         slide.shapes.placeholders[31].text = str(row['Comments'])
         
-        # Get the picture placeholder and insert the picture
-        picture_placeholder = slide.placeholders[33]
+        picture_placeholder = slide.shapes.placeholders[33]
         picture_path = os.path.join(app.config['STATIC_FOLDER'], 'picture.png')
         picture = picture_placeholder.insert_picture(picture_path)
 
-        # Add a hyperlink to the picture placeholder
-        rId = picture.part.relate_to(str(row['Google Maps']), 'http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink', is_external=True)
+        # Add a hyperlink to the picture
+        p = picture_placeholder.text_frame.paragraphs[0]
+        r = p.add_run()
+        r.text = ''
+        hlink = r.hyperlink
+        hlink.address = str(row['Google Maps'])
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
