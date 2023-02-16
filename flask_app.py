@@ -43,11 +43,11 @@ def upload_files():
         slide = prs.slides.add_slide(layout)
 
         # Populate text placeholders on slide with values from Excel row
-        slide.shapes.placeholders[14].text = str(row['Titel'])
-        slide.shapes.placeholders[10].text = str(row['Site'])
-        slide.shapes.placeholders[11].text = str(row['Building'])
-        slide.shapes.placeholders[12].text = str(row['Office'])
-        slide.shapes.placeholders[13].text = str(row['Mezzanine'])
+        slide.shapes.placeholders[14].text = str(row['Adress'])
+        slide.shapes.placeholders[10].text = str(row['Site size'])
+        slide.shapes.placeholders[11].text = str(row['Warehouse size'])
+        slide.shapes.placeholders[12].text = str(row['Office size'])
+        slide.shapes.placeholders[13].text = str(row['Mezzanine size'])
         slide.shapes.placeholders[17].text = str(row['Parking'])
         slide.shapes.placeholders[18].text = str(row['Environment category'])
         slide.shapes.placeholders[19].text = str(row['Maximum building height'])
@@ -57,6 +57,22 @@ def upload_files():
         slide.shapes.placeholders[23].text = str(row['Loading docks'])
         slide.shapes.placeholders[24].text = str(row['Overhead doors'])
         slide.shapes.placeholders[25].text = str(row['Sprinkler'])
+        slide.shapes.placeholders[26].text = str(row['Warehouse Price'])
+        slide.shapes.placeholders[27].text = str(row['Office Price'])
+        slide.shapes.placeholders[28].text = str(row['Mezzanine Price'])
+        slide.shapes.placeholders[29].text = str(row['Parking Cost'])
+        slide.shapes.placeholders[31].text = str(row['Comments'])
+        
+        #Picture Google maps link
+        picture_placeholder = slide.shapes.placeholders[33]
+        picture_path = current_app.config['STATIC_FOLDER'] + '/picture.png'
+        picture = picture_placeholder.insert_picture(picture_path)
+        
+        # Add a transparent shape over the picture and set the hyperlink for it
+        hyperlink_shape = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, *picture.left_top, *picture.width_height)
+        hyperlink_shape.fill.background().transparency = 100000
+        hyperlink_shape.click_action.hyperlink.address = str(row['Google Maps'])
+        hyperlink_shape.z_order = picture.z_order + 1
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
@@ -94,7 +110,3 @@ def upload_files():
     
     # Return populated PowerPoint file for download
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'), as_attachment=True)
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
