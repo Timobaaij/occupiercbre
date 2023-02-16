@@ -63,7 +63,7 @@ def upload_files():
         
         # Populate the first picture placeholder on slide with image1 from folder
     pictures_dir = app.config['UPLOAD_FOLDER']
-    image1_filename = f'image{(index+1)*2+1}'
+    image1_filename = f'image{index+*2+1}'
     image1_path = None
 
     for filename in os.listdir(pictures_dir):
@@ -87,7 +87,7 @@ def upload_files():
             slide.shapes.placeholders[first_picture_index].insert_picture(io.BytesIO(img_bytes))
 
     # Populate the second picture placeholder on slide with image2 from folder
-    image2_filename = f'image{(index+1)*2+2}'
+    image2_filename = f'image{index*2+2}'
     image2_path = None
 
     for filename in os.listdir(pictures_dir):
