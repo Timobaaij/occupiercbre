@@ -71,7 +71,8 @@ def upload_files():
         picture = picture_placeholder.insert_picture(picture_path)
         
         # Add a transparent shape over the picture and set the hyperlink for it
-        hyperlink_shape = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, *picture.left_top, *picture.width_height)
+        x, y, w, h = picture_placeholder.left, picture_placeholder.top, picture_placeholder.width, picture_placeholder.height
+        hyperlink_shape = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, x, y, w, h)
         hyperlink_shape.fill.background().transparency = 100000
         hyperlink_shape.click_action.hyperlink.address = str(row['Google Maps'])
         hyperlink_shape.z_order = picture.z_order + 1
