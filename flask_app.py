@@ -102,6 +102,3 @@ def upload_files():
     
     # Return populated PowerPoint file for download
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'), as_attachment=True)
-
-if name == 'main':
-    app.run(debug=True)
