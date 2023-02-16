@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PowerPoint Generator</title>
+</head>
+<body>
+    <h1>PowerPoint Generator</h1>
+    <p>Please download the template file and fill it with your data.</p>
+    <a href="/download_template" download>Download Template</a>
+
+    <hr>
+
+    <form action="/upload_files" method="post" enctype="multipart/form-data">
+        <label for="data_file">Data file (.xlsx):</label>
+        <input type="file" name="data_file" id="data_file" required><br>
+
+        <label for="picture_files">Picture files (.jpg, .jpeg, .png):</label>
+        <input type="file" name="picture_files" id="picture_files" accept=".jpg, .jpeg, .png" multiple required><br>
+
+        <input type="submit" value="Generate PowerPoint">
+    </form>
+</body>
+</html>
