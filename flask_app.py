@@ -71,7 +71,7 @@ def upload_files():
         picture = picture_placeholder.insert_picture(picture_path)
 
         # Add a hyperlink to the picture placeholder
-        hyperlink = picture_placeholder.part.add_hyperlink(str(row['Google Maps']), rId=1)
+        rId = picture.part.relate_to(str(row['Google Maps']), RT.HYPERLINK, is_external=True)
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
