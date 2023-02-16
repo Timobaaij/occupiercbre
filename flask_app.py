@@ -4,6 +4,8 @@ from pptx import Presentation
 import pandas as pd
 from PIL import Image
 import io
+from pptx.enum.shapes import MSO_SHAPE
+
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
@@ -65,7 +67,7 @@ def upload_files():
         
         #Picture Google maps link
         picture_placeholder = slide.shapes.placeholders[33]
-        picture_path = current_app.config['STATIC_FOLDER'] + '/picture.png'
+        picture_path = os.path.join(app.config['STATIC_FOLDER'], 'picture.png')
         picture = picture_placeholder.insert_picture(picture_path)
         
         # Add a transparent shape over the picture and set the hyperlink for it
@@ -110,7 +112,3 @@ def upload_files():
     
     # Return populated PowerPoint file for download
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'), as_attachment=True)
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
