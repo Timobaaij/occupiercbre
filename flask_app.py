@@ -5,6 +5,8 @@ import pandas as pd
 from PIL import Image
 import io
 from pptx.enum.shapes import MSO_SHAPE
+from pptx.oxml.xmlchemy import OxmlElement
+from pptx.oxml.shared import qn
 
 
 app = Flask(__name__)
@@ -71,7 +73,7 @@ def upload_files():
         picture = picture_placeholder.insert_picture(picture_path)
 
         # Add a hyperlink to the picture placeholder
-        rId = picture.part.relate_to(str(row['Google Maps']), RT.HYPERLINK, is_external=True)
+       rId = picture.part.relate_to(str(row['Google Maps']), OxmlElement('a:{0}'.format('hyperlink'), {'r:id': 'rId1'}, nsdecls={'a': qn('a')}), is_external=True)
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
