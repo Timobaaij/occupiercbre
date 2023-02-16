@@ -114,9 +114,9 @@ def upload_files():
     prs.save(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'))
     
     # Delete temporary data and picture files
-    os.remove(data_path)
-    for picture_path in picture_paths:
-        os.remove(picture_path)
+    #os.remove(data_path)
+    #for picture_path in picture_paths:
+    #    os.remove(picture_path)
     
     # Return populated PowerPoint file for download
     return send_file(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'), as_attachment=True)
