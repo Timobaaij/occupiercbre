@@ -18,6 +18,10 @@ def index():
 def download_template():
     return send_file(os.path.join(app.config['STATIC_FOLDER'], 'template.xlsx'), as_attachment=True)
 
+@app.route('/download_explanation')
+def download_template():
+    return send_file(os.path.join(app.config['STATIC_FOLDER'], 'explanation.pptx'), as_attachment=True)
+
 @app.route('/upload_files', methods=['POST'])
 def upload_files():
     # Handle uploaded data.xlsx file
