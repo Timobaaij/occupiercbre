@@ -68,13 +68,12 @@ def upload_files():
         picture_path = os.path.join(app.config['STATIC_FOLDER'], 'picture.png')
         picture = picture_placeholder.insert_picture(picture_path)
 
-        placeholder = slide.shapes.placeholders[34]
-        text = "Google Maps"
-        address = str(row['Google Maps'])
-        paragraph = placeholder.text_frame.add_paragraph()
-        run = paragraph.add_run(text)
-        hyperlink = run.hyperlink
-        hyperlink.address = address
+        paragraph = slide.shapes.placeholders[34].text_frame.paragraphs[0]
+        paragraph.clear()
+        run = paragraph.add_run()
+        run.text = 'Google Maps'
+        hlink = run.hyperlink
+        hlink.address = str(row['Google Maps'])
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
