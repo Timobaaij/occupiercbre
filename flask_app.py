@@ -68,10 +68,13 @@ def upload_files():
         picture_path = os.path.join(app.config['STATIC_FOLDER'], 'picture.png')
         picture = picture_placeholder.insert_picture(picture_path)
 
-        slide.shapes.placeholders[34].text_frame.text = ''
-        paragraph = slide.shapes.placeholders[34].text_frame.paragraphs[0]
-        run = paragraph.add_run('link to python-pptx @ GitHub')
-        hyperlink = slide.shapes.placeholders[12].text_frame.add_hyperlink('https://github.com/scanny/python-pptx')
+        placeholder = slide.shapes.placeholders[34]
+        text = "Google Maps"
+        address = str(row['Google Maps'])
+        paragraph = placeholder.text_frame.add_paragraph()
+        run = paragraph.add_run(text)
+        hyperlink = run.hyperlink
+        hyperlink.address = address
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
