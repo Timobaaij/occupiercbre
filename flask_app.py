@@ -37,38 +37,38 @@ def upload_files():
 
     # Load PowerPoint template and select slide layout
     prs = Presentation(os.path.join(app.config['STATIC_FOLDER'], 'template.pptx'))
-    layout = prs.slide_layouts[0]
+    slide = prs.slides[0]
 
     # Loop over rows in Excel file and create new slide for each row
     for index, row in data.iterrows():
-        slide = prs.slides.add_slide(layout)
+        new_slide = prs.slides.add_slide(slide)
 
         # Populate text placeholders on slide with values from Excel row
-        slide.shapes.placeholders[14].text = str(row['Adress'])
-        slide.shapes.placeholders[10].text = str(row['Site size'])
-        slide.shapes.placeholders[11].text = str(row['Warehouse size'])
-        slide.shapes.placeholders[12].text = str(row['Office size'])
-        slide.shapes.placeholders[13].text = str(row['Mezzanine size'])
-        slide.shapes.placeholders[17].text = str(row['Parking'])
-        slide.shapes.placeholders[18].text = str(row['Environment category'])
-        slide.shapes.placeholders[19].text = str(row['Maximum building height'])
-        slide.shapes.placeholders[20].text = str(row['Clear height'])
-        slide.shapes.placeholders[21].text = str(row['Floor load'])
-        slide.shapes.placeholders[22].text = str(row['Floor flatness'])
-        slide.shapes.placeholders[23].text = str(row['Loading docks'])
-        slide.shapes.placeholders[24].text = str(row['Overhead doors'])
-        slide.shapes.placeholders[25].text = str(row['Sprinkler'])
-        slide.shapes.placeholders[26].text = str(row['Warehouse Price'])
-        slide.shapes.placeholders[27].text = str(row['Office Price'])
-        slide.shapes.placeholders[28].text = str(row['Mezzanine Price'])
-        slide.shapes.placeholders[29].text = str(row['Parking Cost'])
-        slide.shapes.placeholders[31].text = str(row['Comments'])
+        new_slide.shapes.placeholders[14].text = str(row['Adress'])
+        new_slide.shapes.placeholders[10].text = str(row['Site size'])
+        new_slide.shapes.placeholders[11].text = str(row['Warehouse size'])
+        new_slide.shapes.placeholders[12].text = str(row['Office size'])
+        new_slide.shapes.placeholders[13].text = str(row['Mezzanine size'])
+        new_slide.shapes.placeholders[17].text = str(row['Parking'])
+        new_slide.shapes.placeholders[18].text = str(row['Environment category'])
+        new_slide.shapes.placeholders[19].text = str(row['Maximum building height'])
+        new_slide.shapes.placeholders[20].text = str(row['Clear height'])
+        new_slide.shapes.placeholders[21].text = str(row['Floor load'])
+        new_slide.shapes.placeholders[22].text = str(row['Floor flatness'])
+        new_slide.shapes.placeholders[23].text = str(row['Loading docks'])
+        new_slide.shapes.placeholders[24].text = str(row['Overhead doors'])
+        new_slide.shapes.placeholders[25].text = str(row['Sprinkler'])
+        new_slide.shapes.placeholders[26].text = str(row['Warehouse Price'])
+        new_slide.shapes.placeholders[27].text = str(row['Office Price'])
+        new_slide.shapes.placeholders[28].text = str(row['Mezzanine Price'])
+        new_slide.shapes.placeholders[29].text = str(row['Parking Cost'])
+        new_slide.shapes.placeholders[31].text = str(row['Comments'])
         
-        picture_placeholder = slide.shapes.placeholders[33]
+        picture_placeholder = new_slide.shapes.placeholders[33]
         picture_path = os.path.join(app.config['STATIC_FOLDER'], 'picture.png')
         picture = picture_placeholder.insert_picture(picture_path)
 
-        paragraph = slide.shapes.placeholders[34].text_frame.paragraphs[0]
+        paragraph = new_slide.shapes.placeholders[34].text_frame.paragraphs[0]
         paragraph.clear()
         run = paragraph.add_run()
         run.text = 'Google Maps'
@@ -91,7 +91,7 @@ def upload_files():
             with open(image1_path, 'rb') as f:
                 img_bytes = f.read()
 
-            slide.shapes.placeholders[first_picture_index].insert_picture(io.BytesIO(img_bytes))
+            new_slide.shapes.placeholders[first_picture_index].insert_picture(io.BytesIO(img_bytes))
 
         if not os.path.isfile(image2_path):
             print(f'Error: Could not find {image2_path}')
@@ -99,7 +99,7 @@ def upload_files():
             with open(image2_path, 'rb') as f:
                 img_bytes = f.read()
 
-            slide.shapes.placeholders[first_picture_index+1].insert_picture(io.BytesIO(img_bytes))
+            new_slide.shapes.placeholders[first_picture_index+1].insert_picture(io.BytesIO(img_bytes))
 
     # Save populated PowerPoint file
     prs.save(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'))
