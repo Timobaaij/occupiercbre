@@ -72,11 +72,10 @@ def upload_files():
         picture = picture_placeholder.insert_picture(picture_path)
 
         # Add a hyperlink to the picture
-        p = picture_placeholder.text_frame.paragraphs[0]
-        r = p.add_run()
-        r.text = ''
-        hlink = r.hyperlink
-        hlink.address = str(row['Google Maps'])
+        p = picture_placeholder.TextFrame.TextRange.Paragraphs(0)
+        r = p.InsertAfter('')
+        hlink = r.ActionSettings.Add(1)
+        hlink.Hyperlink.Address = str(row['Google Maps'])
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
@@ -106,6 +105,18 @@ def upload_files():
 
     # Save populated PowerPoint file
     prs.save(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'))
+    
+    # Add hyperlink to the picture shape at index 33
+    ppt_app = win32com.client.Dispatch("PowerPoint.Application")
+    ppt_file = ppt_app.Presentations.Open(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'))
+    slide = ppt_file.Slides(1)
+    picture_shape = slide.Shapes(33)
+    p = picture_shape.TextFrame.TextRange.Paragraphs(0)
+    r = p.InsertAfter('')
+    hlink = r.ActionSettings.Add(1)
+    hlink.Hyperlink.Address = str(row['Google Maps'])
+    ppt_file.Save()
+    ppt_file.Close()
     
     # Delete temporary data and picture files
     os.remove(data_path)
