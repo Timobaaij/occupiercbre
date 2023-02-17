@@ -4,11 +4,6 @@ from pptx import Presentation
 import pandas as pd
 from PIL import Image
 import io
-from pptx.enum.shapes import MSO_SHAPE
-from pptx.oxml.xmlchemy import OxmlElement
-from pptx.util import Inches
-from pptx.action import Action
-from pptx.enum.action import PP_ACTION
 
 
 app = Flask(__name__)
@@ -73,10 +68,9 @@ def upload_files():
         picture_path = os.path.join(app.config['STATIC_FOLDER'], 'picture.png')
         picture = picture_placeholder.insert_picture(picture_path)
 
-        picture_shape = picture._element.getparent()
-
         # Add a hyperlink to the shape
-        hyperlink = picture_shape.part.add_hyperlink_action(PP_ACTION.HYPERLINK, Action('https://www.example.com'))
+        slide.shapes.placeholders[34].text_frame.paragraphs[0].add_hyperlink('https://github.com/scanny/python-pptx')
+
 
         # Calculate the index of the first picture on this slide
         first_picture_index = 15
