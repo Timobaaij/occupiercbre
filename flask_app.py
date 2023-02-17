@@ -6,7 +6,7 @@ from PIL import Image
 import io
 from pptx.enum.shapes import MSO_SHAPE
 from pptx.oxml.xmlchemy import OxmlElement
-
+import win32com.client
 
 
 app = Flask(__name__)
