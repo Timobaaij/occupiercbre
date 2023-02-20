@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
   width: 400px;
   height: auto;
-  background-image: url('cbre_logo.png');
+  background-image: url('static/cbre_logo.png');
   background-size: contain;
   background-repeat: no-repeat;
   margin-top: 2rem;
