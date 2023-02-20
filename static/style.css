@@ -38,32 +38,10 @@ label {
   color: #333;
 }
 
-/* Style the file upload inputs */
 input[type="file"] {
   display: block;
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 1rem;
-}
-
-/* Style the file upload buttons */
-.upload-btn {
-  display: block;
-  margin: 0 auto;
-  background-color: #012a2d;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-bottom: 1rem;
-}
-
-.upload-btn:hover {
-  background-color: #00b8e7;
 }
 
 input[type="submit"] {
