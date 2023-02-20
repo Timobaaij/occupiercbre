@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title>CBRE Occupier Longlist Creator</title>
     <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script>
+        function showSuccessMessage() {
+            alert("File successfully uploaded!");
+        }
+    </script>
 </head>
 <body>
     <div class="content">
@@ -17,28 +22,25 @@
           <li>Then click on Generate Powerpoint and your longlist will autoatically be created</li>
         </ul>
         <div style="text-align: center;">
-            <a href="/download_explanation" download class="btn">Download Explanation here</a>
+        <a href="/download_explanation" download class="btn">Download Explanation here</a>
         </div>
         <div style="text-align: center;">
-            <a href="/download_template" download class="btn">Download Excel Template here</a>
+        <a href="/download_template" download class="btn">Download Excel Template here</a>
         </div>
         <hr>
         <br>
-        <form action="/upload_files" method="post" enctype="multipart/form-data">
+        <form action="/upload_files" method="post" enctype="multipart/form-data" onsubmit="showSuccessMessage()">
+            <label for="data_file">Data file (.xlsx):</label>
             <div class="file-input-wrapper">
-                <label class="upload-btn" for="data_file">
-                    <span>Select Data File</span>
-                </label>
                 <input type="file" name="data_file" id="data_file" required>
+                <label for="data_file" class="upload-btn">Choose file</label>
             </div>
+            <label for="picture_files">Picture files (.jpg, .jpeg, .png):</label>
             <div class="file-input-wrapper">
-                <label class="upload-btn" for="picture_files">
-                    <span>Select Picture Files</span>
-                </label>
                 <input type="file" name="picture_files" id="picture_files" accept=".jpg, .jpeg, .png" multiple required>
+                <label for="picture_files" class="upload-btn">Choose file</label>
             </div>
-            <br>
-            <input type="submit" value="Generate PowerPoint">
+            <input type="submit" value="Generate PowerPoint" class="generate-btn">
         </form>
     </div>
 </body>
