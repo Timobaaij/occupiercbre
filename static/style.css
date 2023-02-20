@@ -39,64 +39,35 @@ label {
 }
 
 .file-input-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .upload-btn {
-    display: block;
-    margin: 0 auto;
-    background-color: #012a2d;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 1rem;
+  display: block;
+  background-color: #012a2d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline from links */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
-.file-input-wrapper input[type="file"] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
+.upload-btn:hover {
+  background-color: #00b8e7;
 }
 
-.file-input-wrapper span {
-    display: inline-block;
-    padding: 1rem 2rem;
-    text-transform: uppercase;
-}
-
-/* Hide the "No file uploaded" or "file name" text */
 input[type="file"] {
-    color: transparent;
-}
-
-input[type="file"]::-webkit-file-upload-button {
-    visibility: hidden;
-}
-
-input[type="file"]::before {
-    content: 'Select a file';
-    color: #333;
-    display: inline-block;
-    background-color: #fff;
-    padding: 1rem 2rem;
-    border: 1px solid #333;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-input[type="file"]:hover::before {
-    background-color: #333;
-    color: #fff;
+  display: none;
 }
 
 input[type="submit"] {
@@ -175,4 +146,78 @@ ul li {
 
 .btn:hover {
   background-color: #00b8e7;
+}
+
+/* Style the file upload button */
+.file-upload-btn {
+  background-color: #012a2d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline from links */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.file-upload-btn:hover {
+  background-color: #00b8e7;
+}
+
+/* Style the Generate PowerPoint button */
+.generate-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #012a2d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.generate-btn:hover {
+  background-color: #00b8e7;
+}
+
+/* Style the error message */
+.error {
+  color: #ff0000;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Style the success message */
+.success {
+  color: #008000;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Add responsive design */
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 150px;
+  }
+
+  .bg-image {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
 }
