@@ -6,13 +6,6 @@ body {
   background-color: #003f2d;
 }
 
-/* Add a CBRE background color to the header */
-header {
-  background-color: #012a2d;
-  color: #fff;
-  padding: 1rem;
-}
-
 /* Style the CBRE logo */
 .logo {
   display: block;
@@ -22,15 +15,6 @@ header {
   background-image: url('cbre_logo.png');
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-/* Add a CBRE background image to the body */
-.bg-image {
-  background-image: url('https://www.cbre.com/-/media/cbre/countryunitedstates/corporate%20information/corporate%20responsibility/community%20involvement/hero/new-york-day-of-service.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 500px;
-  margin-bottom: 2rem;
 }
 
 /* Style the page content */
