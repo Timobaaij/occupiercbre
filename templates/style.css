@@ -1,0 +1,196 @@
+/* Set a background color and font for the entire page */
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the main heading */
+h1 {
+  color: #00b8e7;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Style the subheading */
+h3 {
+  color: #333;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Style the download link */
+a {
+  display: inline-block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #00b8e7;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #0095b5;
+}
+
+/* Style the form */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the form labels and inputs */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+input[type="file"] {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+input[type="submit"] {
+  background-color: #00b8e7;
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0095b5;
+}
+
+/* Style the list */
+ul {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+ul li {
+  margin-bottom: 1rem;
+}
+
+/* Add a CBRE logo */
+.logo {
+  display: block;
+  margin: 2rem auto;
+  width: 200px;
+  background-image: url('https://logos-world.net/wp-content/uploads/2021/12/CBRE-New-Logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Add a CBRE background image */
+.bg-image {
+  background-image: url('https://www.cbre.com/-/media/cbre/countryunitedstates/corporate%20information/corporate%20responsibility/community%20involvement/hero/new-york-day-of-service.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  margin-bottom: 2rem;
+}
+
+/* Style the page content within the CBRE background image */
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the form input labels */
+label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style the form input fields */
+input[type="file"] {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  background-color: #00b8e7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #0095b5;
+}
+
+/* Style the unordered list */
+ul {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Style the list items */
+ul li {
+  margin-bottom: 1rem;
+}
+
+/* Add responsive design */
+@media screen and (max-width: 600px) {
+  .logo {
+    width: 150px;
+  }
+
+  .bg-image {
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
+
