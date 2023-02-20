@@ -10,11 +10,13 @@ body {
 .logo {
   display: block;
   margin: 0 auto;
-  width: 600px;
+  width: 400px;
   height: auto;
   background-image: url('cbre_logo.png');
   background-size: contain;
   background-repeat: no-repeat;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Style the page content */
