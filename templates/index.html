@@ -16,20 +16,15 @@
           <li>After you have filled the template with data and have all the pictures named corresponding to the names in your data file you can upload your excel and pictures below</li>
           <li>Then click on Generate Powerpoint and your longlist will autoatically be created</li>
         </ul>
-        <div style="text-align: center;">
-        <a href="/download_explanation" download class="btn">Download Explanation here</a
-        </div>
-        <div style="text-align: center;">
+        <a href="/download_explanation" download class="btn">Download Explanation here</a>
         <a href="/download_template" download class="btn">Download Excel Template here</a>
-        </div>
         <hr>
-        <br>
         <form action="/upload_files" method="post" enctype="multipart/form-data">
             <label for="data_file">Data file (.xlsx):</label>
-            <input type="file" name="data_file" id="data_file" required><br><br>
+            <input type="file" name="data_file" id="data_file" required>
             <label for="picture_files">Picture files (.jpg, .jpeg, .png):</label>
-            <input type="file" name="picture_files" id="picture_files" accept=".jpg, .jpeg, .png" multiple required><br><br>
-            <input type="submit" value="Generate PowerPoint">
+            <input type="file" name="picture_files" id="picture_files" accept=".jpg, .jpeg, .png" multiple required>
+            <button type="submit" class="upload-btn">Generate PowerPoint</button>
         </form>
     </div>
 </body>
