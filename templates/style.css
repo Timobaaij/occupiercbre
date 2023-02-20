@@ -1,196 +1,182 @@
-/* Set a background color and font for the entire page */
+/* CSS Style Sheet for CBRE Occupier Longlist Creator */
+
+/* Body styles */
 body {
-  background-color: #f5f5f5;
-  font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f4f4f4;
 }
 
-/* Style the main heading */
+/* Header styles */
+.logo {
+    width: 200px;
+    height: auto;
+}
+
 h1 {
-  color: #00b8e7;
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 2rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #0068b3;
 }
 
-/* Style the subheading */
 h3 {
-  color: #333;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-bottom: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    color: #0068b3;
 }
 
-/* Style the download link */
+/* List styles */
+ul {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Download template link styles */
 a {
-  display: inline-block;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-  background-color: #00b8e7;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    background-color: #0068b3;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
 }
 
 a:hover {
-  background-color: #0095b5;
+    background-color: #004f8c;
 }
 
-/* Style the form */
+/* Form styles */
 form {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the form labels and inputs */
 label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  color: #555;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
 }
 
 input[type="file"] {
-  display: block;
-  margin-bottom: 2rem;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 input[type="submit"] {
-  background-color: #00b8e7;
-  color: #fff;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 4px;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #0068b3;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
 }
 
 input[type="submit"]:hover {
-  background-color: #0095b5;
+    background-color: #004f8c;
 }
 
-/* Style the list */
-ul {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-ul li {
-  margin-bottom: 1rem;
-}
-
-/* Add a CBRE logo */
-.logo {
-  display: block;
-  margin: 2rem auto;
-  width: 200px;
-  background-image: url('https://logos-world.net/wp-content/uploads/2021/12/CBRE-New-Logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Add a CBRE background image */
+/* Background image styles */
 .bg-image {
-  background-image: url('https://www.cbre.com/-/media/cbre/countryunitedstates/corporate%20information/corporate%20responsibility/community%20involvement/hero/new-york-day-of-service.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 500px;
-  margin-bottom: 2rem;
+    background-image: url("cbre_background.jpg");
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: -1;
 }
 
-/* Style the page content within the CBRE background image */
+/* Content styles */
 .content {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    padding: 50px 20px;
 }
 
-/* Style the form input labels */
-label {
-  display: block;
-  margin-bottom: 1rem;
-  font-weight: bold;
-  color: #333;
+/* Footer styles */
+footer {
+margin-top: 50px;
+padding: 20px;
+text-align: center;
+background-color: #f4f4f4;
 }
 
-/* Style the form input fields */
-input[type="file"] {
-  display: block;
-  margin-bottom: 2rem;
+footer p {
+margin: 0;
+font-size: 14px;
+color: #333;
 }
 
-input[type="submit"] {
-  display: block;
-  margin: 0 auto;
-  background-color: #00b8e7;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+footer a {
+color: #0068b3;
+text-decoration: none;
 }
 
-input[type="submit"]:hover {
-  background-color: #0095b5;
+footer a:hover {
+text-decoration: underline;
 }
 
-/* Style the unordered list */
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+h1 {
+font-size: 28px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
 ul {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-  line-height: 1.5;
+    font-size: 16px;
 }
 
-/* Style the list items */
-ul li {
-  margin-bottom: 1rem;
+li {
+    font-size: 14px;
 }
 
-/* Add responsive design */
-@media screen and (max-width: 600px) {
-  .logo {
-    width: 150px;
-  }
-
-  .bg-image {
-    height: 300px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1rem;
-  }
+input[type="submit"],
+a {
+    font-size: 16px;
+    padding: 10px;
 }
-
+}
