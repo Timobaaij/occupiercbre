@@ -98,3 +98,25 @@ ul li {
     font-size: 1rem;
   }
 }
+
+/* Style the download buttons */
+.btn {
+  display: block;
+  margin: 0 auto;
+  background-color: #012a2d;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove underline from links */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btn:hover {
+  background-color: #00b8e7;
+}
