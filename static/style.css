@@ -62,7 +62,7 @@ label {
 }
 
 .upload-btn:hover {
-  background-color: #00b8e7;
+  background-color: #006A4D;
 }
 
 input[type="file"] {
@@ -84,7 +84,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #00b8e7;
+  background-color: #006A4D;
 }
 
 /* Style the unordered list */
@@ -144,7 +144,7 @@ ul li {
 }
 
 .btn:hover {
-  background-color: #00b8e7;
+  background-color: #006A4D;
 }
 
 /* Style the Generate PowerPoint button */
@@ -165,7 +165,7 @@ ul li {
 }
 
 .generate-btn:hover {
-  background-color: #00b8e7;
+  background-color:#006A4D;
 }
 
 /* Style the error message */
