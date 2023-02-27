@@ -103,7 +103,7 @@ def upload_files():
         #Table 5 - Shape 4 - Plot
         table = copied_slide.shapes[4]
         cell = table.table.cell(0, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[5])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[5])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -112,7 +112,7 @@ def upload_files():
         #Table 5 - Shape 4 - Warehouse
         table = copied_slide.shapes[4]
         cell = table.table.cell(1, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[6])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[6])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -121,7 +121,7 @@ def upload_files():
         #Table 5 - Shape 4 - Office
         table = copied_slide.shapes[4]
         cell = table.table.cell(2, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[7])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[7])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -130,7 +130,7 @@ def upload_files():
         #Table 5 - Shape 4 - Mezzanine
         table = copied_slide.shapes[4]
         cell = table.table.cell(3, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[8])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[8])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -211,7 +211,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 1 - WH Size
         table = copied_slide.shapes[6]
         cell = table.table.cell(1, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[17])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[17])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -220,7 +220,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 1 - Office
         table = copied_slide.shapes[6]
         cell = table.table.cell(1, 2)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[18])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[18])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -229,7 +229,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 1 - Mezzanine
         table = copied_slide.shapes[6]
         cell = table.table.cell(1, 3)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[19])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[19])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -238,7 +238,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 2 - WH Size
         table = copied_slide.shapes[6]
         cell = table.table.cell(2, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[20])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[20])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -247,7 +247,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 2 - Office
         table = copied_slide.shapes[6]
         cell = table.table.cell(2, 2)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[21])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[21])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -256,7 +256,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 2 - Mezzanine
         table = copied_slide.shapes[6]
         cell = table.table.cell(2, 3)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[22])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[22])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -265,7 +265,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 3 - WH Size
         table = copied_slide.shapes[6]
         cell = table.table.cell(3, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[23])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[23])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -274,7 +274,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 3 - Office
         table = copied_slide.shapes[6]
         cell = table.table.cell(3, 2)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[24])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[24])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -283,7 +283,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 3 - Mezzanine
         table = copied_slide.shapes[6]
         cell = table.table.cell(3, 3)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[25])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[25])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -292,7 +292,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 4 - WH Size
         table = copied_slide.shapes[6]
         cell = table.table.cell(4, 1)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[26])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[26])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -301,7 +301,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 4 - Office
         table = copied_slide.shapes[6]
         cell = table.table.cell(4, 2)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[27])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[27])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -310,7 +310,7 @@ def upload_files():
         #Table 7 - Shape 6 - Unit 4 - Mezzanine
         table = copied_slide.shapes[6]
         cell = table.table.cell(4, 3)
-        cell.text = '{:,.0f} sq. m.'.format(int(str(x[28])))
+        cell.text = '{:,.0f} sq. m.'.format(float(str(x[28])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
