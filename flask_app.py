@@ -63,7 +63,7 @@ def upload_files():
     
         # Title
         textbox = copied_slide.shapes[12]
-        textbox.text = x[1]
+        textbox.text = str(x[1])
         textbox.text_frame.paragraphs[0].font.name = 'Financier Display'
         textbox.text_frame.paragraphs[0].font.size = Pt(28)
     
