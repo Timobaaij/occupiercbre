@@ -364,12 +364,14 @@ def upload_files():
         
         #Picture placeholder 1
         table = copied_slide.shapes[0]
-        image1_path = os.path.join(app.config['UPLOAD_FOLDER'], x[34] + '.jpg')
+        image1_filename = str(x[34])
+        image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename + '.jpg')
         table = table.insert_picture(image1_path)
         
         #Picture placeholder 2
         table = copied_slide.shapes[1]
-        image2_path = os.path.join(app.config['UPLOAD_FOLDER'], x[35] + '.jpg')
+        image2_filename = str(x[35])
+        image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename + '.jpg')
         table = table.insert_picture(image2_path)
         
         textframe = copied_slide.shapes[2]
