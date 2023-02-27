@@ -361,18 +361,21 @@ def upload_files():
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
         cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
     
+        try:
+            #Picture placeholder 1
+            table = copied_slide.shapes[0]
+            image1_filename = str(x[34])
+            image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename + '.jpg')
+            table = table.insert_picture(image1_path)
+            
+            #Picture placeholder 2
+            table = copied_slide.shapes[1]
+            image2_filename = str(x[35])
+            image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename + '.jpg')
+            table = table.insert_picture(image2_path)
         
-        #Picture placeholder 1
-        table = copied_slide.shapes[0]
-        image1_filename = str(x[34])
-        image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename + '.jpg')
-        table = table.insert_picture(image1_path)
-        
-        #Picture placeholder 2
-        table = copied_slide.shapes[1]
-        image2_filename = str(x[35])
-        image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename + '.jpg')
-        table = table.insert_picture(image2_path)
+        except:
+            continue
         
         textframe = copied_slide.shapes[2]
         p = textframe.text_frame.paragraphs[0]
