@@ -319,7 +319,7 @@ def upload_files():
         #Table 10 - Shape 9 
         table = copied_slide.shapes[10]
         cell = table.table.cell(0, 1)
-        cell.text = '€ {:,.2f} per sq. m. per annum'.format(int(str(x[29])))
+        cell.text = '€ {:,.2f} per sq. m. per annum'.format(float(str(x[29])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -328,7 +328,7 @@ def upload_files():
         #Table 10 - Shape 9 
         table = copied_slide.shapes[10]
         cell = table.table.cell(1, 1)
-        cell.text = '€ {:,.2f} per sq. m. per annum'.format(int(str(x[30])))
+        cell.text = '€ {:,.2f} per sq. m. per annum'.format(float(str(x[30])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -337,7 +337,7 @@ def upload_files():
         #Table 10 - Shape 9 
         table = copied_slide.shapes[10]
         cell = table.table.cell(2, 1)
-        cell.text = '€ {:,.2f} per sq. m. per annum'.format(int(str(x[31])))
+        cell.text = '€ {:,.2f} per sq. m. per annum'.format(float(str(x[31])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -346,7 +346,7 @@ def upload_files():
         #Table 10 - Shape 9 
         table = copied_slide.shapes[10]
         cell = table.table.cell(3, 1)
-        cell.text = '€ {:,.2f} per sq. m. per annum'.format(int(str(x[32])))
+        cell.text = '€ {:,.2f} per sq. m. per annum'.format(float(str(x[32])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -355,7 +355,7 @@ def upload_files():
         #Table 10 - Shape 9 
         table = copied_slide.shapes[10]
         cell = table.table.cell(4, 1)
-        cell.text = '€ {:,.2f} per sq. m. per annum'.format(int(str(x[33])))
+        cell.text = '€ {:,.2f} per sq. m. per annum'.format(float(str(x[33])))
         cell.text_frame.paragraphs[0].font.name = 'Calibre'
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
