@@ -200,3 +200,28 @@ ul li {
     font-size: 1rem;
   }
 }
+
+/* Style the script select input form */
+.form-group {
+  text-align: center;
+}
+
+#script-select {
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 2px solid #012a2d;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #012a2d;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#script-select:focus {
+  outline: none;
+  border-color: #00b0c8;
+  box-shadow: 0 0 0 3px rgba(0, 176, 200, 0.3);
+}
