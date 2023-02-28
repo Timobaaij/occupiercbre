@@ -26,7 +26,7 @@ def download_explanation():
 @app.route('/upload_files', methods=['POST'])
 def upload_files():
     selected_script = request.form.get('script-select')
-    if selected_script == 'Pound/Imperial':
+    if selected_script == 'Euro/Metric':
         # Handle uploaded data.xlsx file
         data_file = request.files['data_file']
         data_path = os.path.join(app.config['UPLOAD_FOLDER'], 'data.xlsx')
@@ -475,7 +475,7 @@ def upload_files():
             
         # Return populated PowerPoint file for download
         return send_file(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'), as_attachment=True)
-    elif selected_script == 'Other':
+    elif selected_script == 'Pound/Imperial':
         data_file = request.files['data_file']
         data_path = os.path.join(app.config['UPLOAD_FOLDER'], 'data.xlsx')
         data_file.save(data_path)
