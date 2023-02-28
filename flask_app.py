@@ -41,6 +41,22 @@ def upload_files():
     workbook = load_workbook(data_path)
     worksheet = workbook.active
     
+    # Loop through the cells in the worksheet
+    empty_rows = []
+    for i, row in enumerate(worksheet.iter_rows()):
+        if all(cell.value is None for cell in row):
+            empty_rows.append(i + 1)
+
+    # Delete empty rows
+    for row_index in reversed(empty_rows):
+        worksheet.delete_rows(row_index)
+        
+    # Make None values empty string
+    for i, row in enumerate(worksheet.iter_rows(min_row=3)):
+    for cell in row:
+        if cell.value is None:
+            cell.value = ""
+
     # Load the PowerPoint file
     ppt = Presentation(os.path.join(app.config['STATIC_FOLDER'], 'template.pptx'))
     
