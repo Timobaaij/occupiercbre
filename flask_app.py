@@ -53,9 +53,9 @@ def upload_files():
         
     # Make None values empty string
     for i, row in enumerate(worksheet.iter_rows(min_row=3)):
-    for cell in row:
-        if cell.value is None:
-            cell.value = ""
+        for cell in row:
+            if cell.value is None:
+                cell.value = ""
 
     # Load the PowerPoint file
     ppt = Presentation(os.path.join(app.config['STATIC_FOLDER'], 'template.pptx'))
