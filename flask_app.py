@@ -439,6 +439,13 @@ def upload_files():
         cell.text_frame.paragraphs[0].font.size = Pt(8)
         cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
         cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
+   
+        textframe = copied_slide.shapes[2]
+        p = textframe.text_frame.paragraphs[0]
+        r = p.add_run()
+        r.text = 'Google Maps'
+        hlink = r.hyperlink
+        hlink.address = x[36]
     
         try:
             #Picture placeholder 1
@@ -455,12 +462,6 @@ def upload_files():
         except:
             continue
         
-        textframe = copied_slide.shapes[2]
-        p = textframe.text_frame.paragraphs[0]
-        r = p.add_run()
-        r.text = 'Google Maps'
-        hlink = r.hyperlink
-        hlink.address = x[36]
         
     # Save populated PowerPoint file
     ppt.save(os.path.join(app.config['UPLOAD_FOLDER'], 'mypopulated.pptx'))
