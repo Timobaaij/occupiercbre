@@ -617,7 +617,7 @@ def upload_files():
             #Table 6 - Shape 5 - Clear Height
             table = copied_slide.shapes[5]
             cell = table.table.cell(0, 1)
-            cell.text = '{} m'.format(str(x[9]))
+            cell.text = '{} ft'.format(str(x[9]))
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
             cell.text_frame.paragraphs[0].font.size = Pt(8)
             cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
