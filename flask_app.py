@@ -6,6 +6,7 @@ from pptx.util import Pt
 from pptx.enum.text import PP_ALIGN
 import copy
 from pptx.dml.color import RGBColor
+from PIL import Image
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads'
@@ -901,14 +902,42 @@ def upload_files():
                 #Picture placeholder 1
                 table = copied_slide.shapes[0]
                 image1_filename = str(x[34])
-                image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename + '.jpg')
-                table = table.insert_picture(image1_path)
+                image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename)
+                
+                # Open the image using PIL library
+                with Image.open(f"{image1_path}.jpg") as im:
+                    # Check if the image format is PNG or JPEG
+                    if im.format in ['PNG', 'JPEG']:
+                        # Save the image with the same format
+                        im.save(f"{image1_path}.{im.format.lower()}")
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image1_path}.{im.format.lower()}")
+                    elif im.format == 'JPG':
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image1_path}.jpg")
+                    else:
+                        # Handle other image formats
+                        print(f"Unsupported image format: {im.format}")                
                 
                 #Picture placeholder 2
                 table = copied_slide.shapes[1]
                 image2_filename = str(x[35])
-                image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename + '.jpg')
-                table = table.insert_picture(image2_path)
+                image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename)
+                
+                # Open the image using PIL library
+                with Image.open(f"{image2_path}.jpg") as im:
+                    # Check if the image format is PNG or JPEG
+                    if im.format in ['PNG', 'JPEG']:
+                        # Save the image with the same format
+                        im.save(f"{image2_path}.{im.format.lower()}")
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image2_path}.{im.format.lower()}")
+                    elif im.format == 'JPG':
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image2_path}.jpg")
+                    else:
+                        # Handle other image formats
+                        print(f"Unsupported image format: {im.format}")     
             except:
                 continue
             
