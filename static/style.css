@@ -194,11 +194,13 @@ ul li {
 
   h1 {
     font-size: 2rem;
+    display: block;
     text-align: center;
   }
 
   h3 {
     font-size: 1rem;
+    display: block;
     text-align: center;
   }
 }
