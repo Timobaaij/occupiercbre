@@ -229,3 +229,25 @@ ul li {
   border-color: #00b0c8;
   box-shadow: 0 0 0 3px rgba(0, 176, 200, 0.3);
 }
+
+h1, h3 {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 1rem;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
