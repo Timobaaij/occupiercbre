@@ -901,49 +901,37 @@ def upload_files():
             #Picture placeholder 1
             table = copied_slide.shapes[0]
             image1_filename = str(x[34])
-            image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename)
+            extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']
+            for extension in extensions:
+                image_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image1_filename}{extension}")
+                if os.path.isfile(image_path):
+                    # Add the extension to the file path
+                    image_path = f"{image_path}.{extension[1:]}"
+                    break
             
             # Check if the file exists in the upload folder
-            if os.path.isfile(image1_path):
-                # Open the image using PIL library
-                with Image.open(image1_path) as im:
-                    # Check if the image format is PNG or JPEG
-                    if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
-                        # Save the image with the same format
-                        im.save(f"{image1_path}.{im.format}")
-                        # Insert the image into the table
-                        table = table.insert_picture(f"{image1_path}.{im.format}")
-                    elif im.format in ['jpg', 'JPG']:
-                        # Insert the image into the table
-                        table = table.insert_picture(f"{image1_path}.{im.format}")
-                    else:
-                        # Handle other image formats
-                        print(f"Unsupported image format: {im.format}")
+            if os.path.isfile(image_path):
+                # Insert the image into the table
+                table = table.insert_picture(image_path)
             else:
                 # Handle file not found in upload folder
-                print(f"File not found in upload folder: {image1_filename}")         
+                print(f"File not found in upload folder: {image1_filename}")  
             
             #Picture placeholder 2
             table = copied_slide.shapes[1]
             image2_filename = str(x[35])
-            image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename)
+            extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']
+            for extension in extensions:
+                image2_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image2_filename}{extension}")
+                if os.path.isfile(image2_path):
+                    # Add the extension to the file path
+                    image2_path = f"{image2_path}.{extension[1:]}"
+                    break
             
             # Check if the file exists in the upload folder
             if os.path.isfile(image2_path):
-                # Open the image using PIL library
-                with Image.open(image2_path) as im:
-                    # Check if the image format is PNG or JPEG
-                    if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
-                        # Save the image with the same format
-                        im.save(f"{image2_path}.{im.format}")
-                        # Insert the image into the table
-                        table = table.insert_picture(f"{image2_path}.{im.format}")
-                    elif im.format in ['jpg', 'JPG']:
-                        # Insert the image into the table
-                        table = table.insert_picture(f"{image2_path}.{im.format}")
-                    else:
-                        # Handle other image formats
-                        print(f"Unsupported image format: {im.format}")
+                # Insert the image into the table with the correct format
+                table = table.insert_picture(image2_path)
             else:
                 # Handle file not found in upload folder
                 print(f"File not found in upload folder: {image2_filename}")
