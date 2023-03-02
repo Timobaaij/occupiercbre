@@ -909,14 +909,14 @@ def upload_files():
                     # Open the image using PIL library
                     with Image.open(image1_path) as im:
                         # Check if the image format is PNG or JPEG
-                        if im.format.lower() in ['png', 'jpeg']:
+                        if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
                             # Save the image with the same format
-                            im.save(f"{image1_path}.{im.format.lower()}")
+                            im.save(f"{image1_path}.{im.format}")
                             # Insert the image into the table
-                            table = table.insert_picture(f"{image1_path}.{im.format.lower()}")
-                        elif im.format.lower() == 'jpg':
+                            table = table.insert_picture(f"{image1_path}.{im.format}")
+                        elif im.format in ['jpg', 'JPG']:
                             # Insert the image into the table
-                            table = table.insert_picture(f"{image1_path}.jpg")
+                            table = table.insert_picture(f"{image1_path}.{im.format}")
                         else:
                             # Handle other image formats
                             print(f"Unsupported image format: {im.format}")
@@ -934,14 +934,14 @@ def upload_files():
                     # Open the image using PIL library
                     with Image.open(image2_path) as im:
                         # Check if the image format is PNG or JPEG
-                        if im.format.lower() in ['png', 'jpeg']:
+                        if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
                             # Save the image with the same format
-                            im.save(f"{image2_path}.{im.format.lower()}")
+                            im.save(f"{image2_path}.{im.format}")
                             # Insert the image into the table
-                            table = table.insert_picture(f"{image2_path}.{im.format.lower()}")
-                        elif im.format.lower() == 'jpg':
+                            table = table.insert_picture(f"{image2_path}.{im.format}")
+                        elif im.format in ['jpg', 'JPG']:
                             # Insert the image into the table
-                            table = table.insert_picture(f"{image2_path}.jpg")
+                            table = table.insert_picture(f"{image2_path}.{im.format}")
                         else:
                             # Handle other image formats
                             print(f"Unsupported image format: {im.format}")
