@@ -716,7 +716,7 @@ def upload_files():
             table = copied_slide.shapes[9]
             cell = table.table.cell(0, 1)
             try:
-                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[33])))
+                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[17])))
             except:
                 cell.text = str(x[17])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
@@ -728,9 +728,10 @@ def upload_files():
             table = copied_slide.shapes[6]
             cell = table.table.cell(0, 0)
             cell.text = str(x[20])
+            cell.text_frame.paragraphs[0].font.bold = False
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
             cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
+            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.LEFT   
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
             #Table 3 - Shape 12 - Owner developer
