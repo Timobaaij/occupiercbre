@@ -534,7 +534,7 @@ def upload_files():
                     cell.value = ""
 
         # Load the PowerPoint file
-        ppt = Presentation(os.path.join(app.config['STATIC_FOLDER'], 'template.pptx'))
+        ppt = Presentation(os.path.join(app.config['STATIC_FOLDER'], 'template_uk.pptx'))
         
         # Get the first slide in the presentation
         slide = ppt.slides[0]
@@ -554,13 +554,13 @@ def upload_files():
         
         
             # Title
-            textbox = copied_slide.shapes[12]
+            textbox = copied_slide.shapes[11]
             textbox.text = str(x[1])
             textbox.text_frame.paragraphs[0].font.name = 'Financier Display'
             textbox.text_frame.paragraphs[0].font.size = Pt(28)
         
             #Number
-            textbox = copied_slide.shapes[11]
+            textbox = copied_slide.shapes[10]
             textbox.text = str(x[0])
             textbox.text_frame.paragraphs[0].font.name = 'Financier Display'
             textbox.text_frame.paragraphs[0].font.size = Pt(28)
@@ -686,7 +686,7 @@ def upload_files():
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
             #Table 10 - Shape 9 - truck parcking
-            table = copied_slide.shapes[9]
+            table = copied_slide.shapes[8]
             cell = table.table.cell(0, 1)
             cell.text = str(x[14])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
@@ -695,7 +695,7 @@ def upload_files():
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
             #Table 10 - Shape 9 - personal parking
-            table = copied_slide.shapes[9]
+            table = copied_slide.shapes[8]
             cell = table.table.cell(1, 1)
             cell.text = str(x[15])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
@@ -704,7 +704,7 @@ def upload_files():
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
             #Table 9 - Shape 8 - BREAAM
-            table = copied_slide.shapes[8]
+            table = copied_slide.shapes[7]
             cell = table.table.cell(0, 1)
             cell.text = str(x[16])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
@@ -712,11 +712,11 @@ def upload_files():
             cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
-            #Table 7 - Shape 6 - Unit 1 - WH Size
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(1, 1)
+            #Table 12 - Shape 9 - rental price
+            table = copied_slide.shapes[9]
+            cell = table.table.cell(0, 1)
             try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[17])))
+                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[33])))
             except:
                 cell.text = str(x[17])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
@@ -724,193 +724,28 @@ def upload_files():
             cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
-            #Table 7 - Shape 6 - Unit 1 - Office
+            #Table 9 - Shape 6 - Description
             table = copied_slide.shapes[6]
-            cell = table.table.cell(1, 2)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[18])))
-            except:
-                cell.text = str(x[18])
+            cell = table.table.cell(0, 0)
+            cell.text = str(x[20])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
             cell.text_frame.paragraphs[0].font.size = Pt(8)
             cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
-            #Table 7 - Shape 6 - Unit 1 - Mezzanine
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(1, 3)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[19])))
-            except:
-                cell.text = str(x[19])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 2 - WH Size
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(2, 1)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[20])))
-            except:
-                cell.text = str(x[20])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 2 - Office
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(2, 2)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[21])))
-            except:
-                cell.text = str(x[21])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 2 - Mezzanine
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(2, 3)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[22])))
-            except:
-                cell.text = str(x[22])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 3 - WH Size
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(3, 1)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[23])))
-            except:
-                cell.text = str(x[23])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 3 - Office
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(3, 2)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[24])))
-            except:
-                cell.text = str(x[24])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 3 - Mezzanine
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(3, 3)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[25])))
-            except:
-                cell.text = str(x[25])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 4 - WH Size
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(4, 1)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[26])))
-            except:
-                cell.text = str(x[26])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 4 - Office
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(4, 2)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[27])))
-            except:
-                cell.text = str(x[27])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 7 - Shape 6 - Unit 4 - Mezzanine
-            table = copied_slide.shapes[6]
-            cell = table.table.cell(4, 3)
-            try:
-                cell.text = '{:,.0f} sq. ft.'.format(float(str(x[28])))
-            except:
-                cell.text = str(x[28])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 10 - Shape 9 
-            table = copied_slide.shapes[10]
+            #Table 3 - Shape 12 - Owner developer
+            table = copied_slide.shapes[12]
             cell = table.table.cell(0, 1)
-            try:
-                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[29])))
-            except:
-                cell.text = str(x[29])
+            cell.text = str(x[18])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
             cell.text_frame.paragraphs[0].font.size = Pt(8)
             cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
             cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
             
-            #Table 10 - Shape 9 
-            table = copied_slide.shapes[10]
+            #Table 3 - Shape 12 - Planning
+            table = copied_slide.shapes[12]
             cell = table.table.cell(1, 1)
-            try:
-                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[30])))
-            except:
-                cell.text = str(x[30])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 10 - Shape 9 
-            table = copied_slide.shapes[10]
-            cell = table.table.cell(2, 1)
-            try:
-                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[31])))
-            except:
-                cell.text = str(x[31])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 10 - Shape 9 
-            table = copied_slide.shapes[10]
-            cell = table.table.cell(3, 1)
-            try:
-                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[32])))
-            except:
-                cell.text = str(x[32])
-            cell.text_frame.paragraphs[0].font.name = 'Calibre'
-            cell.text_frame.paragraphs[0].font.size = Pt(8)
-            cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
-            cell.text_frame.paragraphs[0].font.color.rgb = RGBColor(38, 38, 38)
-            
-            #Table 10 - Shape 9 
-            table = copied_slide.shapes[10]
-            cell = table.table.cell(4, 1)
-            try:
-                cell.text = '£ {:,.2f} per sq. ft. per annum'.format(float(str(x[33])))
-            except:
-                cell.text = str(x[33])
+            cell.text = str(x[19])
             cell.text_frame.paragraphs[0].font.name = 'Calibre'
             cell.text_frame.paragraphs[0].font.size = Pt(8)
             cell.text_frame.paragraphs[0].alignment = PP_ALIGN.RIGHT   
@@ -921,11 +756,11 @@ def upload_files():
             r = p.add_run()
             r.text = 'Google Maps'
             hlink = r.hyperlink
-            hlink.address = x[36]
+            hlink.address = x[23]
         
             #Picture placeholder 1
             table = copied_slide.shapes[0]
-            image1_filename = str(x[34])
+            image1_filename = str(x[21])
             extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']
             for extension in extensions:
                 image_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image1_filename}{extension}")
@@ -943,7 +778,7 @@ def upload_files():
             
             #Picture placeholder 2
             table = copied_slide.shapes[1]
-            image2_filename = str(x[35])
+            image2_filename = str(x[22])
             extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']
             for extension in extensions:
                 image2_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image2_filename}{extension}")
