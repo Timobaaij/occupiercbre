@@ -21,7 +21,7 @@ def download_template():
     return send_file(os.path.join(app.config['STATIC_FOLDER'], 'template.xlsx'), as_attachment=True)
 
 @app.route('/download_template_uk')
-def download_template():
+def download_template_uk():
     return send_file(os.path.join(app.config['STATIC_FOLDER'], 'template_uk.xlsx'), as_attachment=True)
 
 @app.route('/download_explanation')
