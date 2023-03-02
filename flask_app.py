@@ -906,7 +906,6 @@ def upload_files():
                 image_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image1_filename}{extension}")
                 if os.path.isfile(image_path):
                     # Add the extension to the file path
-                    image_path = f"{image_path}.{extension[1:]}"
                     break
             
             # Check if the file exists in the upload folder
@@ -925,7 +924,6 @@ def upload_files():
                 image2_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image2_filename}{extension}")
                 if os.path.isfile(image2_path):
                     # Add the extension to the file path
-                    image2_path = f"{image2_path}.{extension[1:]}"
                     break
             
             # Check if the file exists in the upload folder
