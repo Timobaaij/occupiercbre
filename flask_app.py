@@ -20,6 +20,10 @@ def index():
 def download_template():
     return send_file(os.path.join(app.config['STATIC_FOLDER'], 'template.xlsx'), as_attachment=True)
 
+@app.route('/download_template_uk')
+def download_template():
+    return send_file(os.path.join(app.config['STATIC_FOLDER'], 'template_uk.xlsx'), as_attachment=True)
+
 @app.route('/download_explanation')
 def download_explanation():
     return send_file(os.path.join(app.config['STATIC_FOLDER'], 'explanation.pptx'), as_attachment=True)
