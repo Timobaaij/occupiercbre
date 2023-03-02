@@ -898,58 +898,55 @@ def upload_files():
             hlink = r.hyperlink
             hlink.address = x[36]
         
-            try:
-                #Picture placeholder 1
-                table = copied_slide.shapes[0]
-                image1_filename = str(x[34])
-                image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename)
-                
-                # Check if the file exists in the upload folder
-                if os.path.isfile(image1_path):
-                    # Open the image using PIL library
-                    with Image.open(image1_path) as im:
-                        # Check if the image format is PNG or JPEG
-                        if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
-                            # Save the image with the same format
-                            im.save(f"{image1_path}.{im.format}")
-                            # Insert the image into the table
-                            table = table.insert_picture(f"{image1_path}.{im.format}")
-                        elif im.format in ['jpg', 'JPG']:
-                            # Insert the image into the table
-                            table = table.insert_picture(f"{image1_path}.{im.format}")
-                        else:
-                            # Handle other image formats
-                            print(f"Unsupported image format: {im.format}")
-                else:
-                    # Handle file not found in upload folder
-                    print(f"File not found in upload folder: {image1_filename}")         
-                
-                #Picture placeholder 2
-                table = copied_slide.shapes[1]
-                image2_filename = str(x[35])
-                image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename)
-                
-                # Check if the file exists in the upload folder
-                if os.path.isfile(image2_path):
-                    # Open the image using PIL library
-                    with Image.open(image2_path) as im:
-                        # Check if the image format is PNG or JPEG
-                        if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
-                            # Save the image with the same format
-                            im.save(f"{image2_path}.{im.format}")
-                            # Insert the image into the table
-                            table = table.insert_picture(f"{image2_path}.{im.format}")
-                        elif im.format in ['jpg', 'JPG']:
-                            # Insert the image into the table
-                            table = table.insert_picture(f"{image2_path}.{im.format}")
-                        else:
-                            # Handle other image formats
-                            print(f"Unsupported image format: {im.format}")
-                else:
-                    # Handle file not found in upload folder
-                    print(f"File not found in upload folder: {image2_filename}")
-            except:
-                continue
+            #Picture placeholder 1
+            table = copied_slide.shapes[0]
+            image1_filename = str(x[34])
+            image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename)
+            
+            # Check if the file exists in the upload folder
+            if os.path.isfile(image1_path):
+                # Open the image using PIL library
+                with Image.open(image1_path) as im:
+                    # Check if the image format is PNG or JPEG
+                    if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
+                        # Save the image with the same format
+                        im.save(f"{image1_path}.{im.format}")
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image1_path}.{im.format}")
+                    elif im.format in ['jpg', 'JPG']:
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image1_path}.{im.format}")
+                    else:
+                        # Handle other image formats
+                        print(f"Unsupported image format: {im.format}")
+            else:
+                # Handle file not found in upload folder
+                print(f"File not found in upload folder: {image1_filename}")         
+            
+            #Picture placeholder 2
+            table = copied_slide.shapes[1]
+            image2_filename = str(x[35])
+            image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename)
+            
+            # Check if the file exists in the upload folder
+            if os.path.isfile(image2_path):
+                # Open the image using PIL library
+                with Image.open(image2_path) as im:
+                    # Check if the image format is PNG or JPEG
+                    if im.format in ['png', 'jpeg', 'PNG', 'JPEG']:
+                        # Save the image with the same format
+                        im.save(f"{image2_path}.{im.format}")
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image2_path}.{im.format}")
+                    elif im.format in ['jpg', 'JPG']:
+                        # Insert the image into the table
+                        table = table.insert_picture(f"{image2_path}.{im.format}")
+                    else:
+                        # Handle other image formats
+                        print(f"Unsupported image format: {im.format}")
+            else:
+                # Handle file not found in upload folder
+                print(f"File not found in upload folder: {image2_filename}")
             
             
         # Save populated PowerPoint file
