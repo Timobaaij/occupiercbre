@@ -450,20 +450,41 @@ def upload_files():
             hlink = r.hyperlink
             hlink.address = x[36]
         
-            try:
-                #Picture placeholder 1
-                table = copied_slide.shapes[0]
-                image1_filename = str(x[34])
-                image1_path = os.path.join(app.config['UPLOAD_FOLDER'], image1_filename + '.jpg')
-                table = table.insert_picture(image1_path)
-                
-                #Picture placeholder 2
-                table = copied_slide.shapes[1]
-                image2_filename = str(x[35])
-                image2_path = os.path.join(app.config['UPLOAD_FOLDER'], image2_filename + '.jpg')
+            #Picture placeholder 1
+            table = copied_slide.shapes[0]
+            image1_filename = str(x[34])
+            extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']
+            for extension in extensions:
+                image_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image1_filename}{extension}")
+                if os.path.isfile(image_path):
+                    # Add the extension to the file path
+                    break
+            
+            # Check if the file exists in the upload folder
+            if os.path.isfile(image_path):
+                # Insert the image into the table
+                table = table.insert_picture(image_path)
+            else:
+                # Handle file not found in upload folder
+                print(f"File not found in upload folder: {image1_filename}")  
+            
+            #Picture placeholder 2
+            table = copied_slide.shapes[1]
+            image2_filename = str(x[35])
+            extensions = ['.jpg', '.jpeg', '.png', '.JPG', '.JPEG', '.PNG']
+            for extension in extensions:
+                image2_path = os.path.join(app.config['UPLOAD_FOLDER'], f"{image2_filename}{extension}")
+                if os.path.isfile(image2_path):
+                    # Add the extension to the file path
+                    break
+            
+            # Check if the file exists in the upload folder
+            if os.path.isfile(image2_path):
+                # Insert the image into the table with the correct format
                 table = table.insert_picture(image2_path)
-            except:
-                continue
+            else:
+                # Handle file not found in upload folder
+                print(f"File not found in upload folder: {image2_filename}")
             
             
         # Save populated PowerPoint file
