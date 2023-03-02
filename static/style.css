@@ -251,3 +251,11 @@ h1, h3 {
     text-align: center;
   }
 }
+
+.download-links {
+    display: flex;
+    justify-content: center;
+}
+.download-links a:not(:first-child) {
+    margin-left: 20px;
+}
